@@ -1,0 +1,8 @@
+function p = env_paths_tracking(p)
+
+    p.net_base_path = '/path/to/nets/';
+    p.seq_base_path = '/path/to/demo/sequences/';
+    p.seq_vot_base_path = '/path/to/VOT/evaluation/sequences/'; % (optional)
+    p.stats_path = '/path/to/ILSVRC15-VID/stats.mat'; % (optional)
+
+end

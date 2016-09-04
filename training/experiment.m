@@ -25,11 +25,9 @@ function [net, stats] = experiment(imdb_video, varargin)
     opts.gpus = [];
     opts.prefetch = false; % Both get_batch and cnn_train_dag depend on prefetch.
     opts.train.numEpochs = 50;
-    r = exp((log(1e-5)-log(1e-2)) / (50-1)); % logspace(-2, -5, 50)
-    opts.train.learningRate = 1e-2 * r.^(0:opts.train.numEpochs-1);
+    opts.train.learningRate = logspace(-2, -5, opts.train.numEpochs);
     opts.train.weightDecay = 5e-4;
     opts.train.batchSize = 8; % we empirically observed that small batches work better
-    opts.train.numSubBatches = 1;
     opts.train.profile = false;
     % Data augmentation settings
     opts.subMean = false;
@@ -53,7 +51,7 @@ function [net, stats] = experiment(imdb_video, varargin)
         imdb_video = load(opts.imdbVideoPath);
     end
 
-    % Load dataset statistics for data augmentation
+    % Load dataset statistics
     [rgbMean_z, rgbVariance_z, rgbMean_x, rgbVariance_x] = load_stats(opts);
     if opts.shuffleDataset
         s = RandStream.create('mt19937ar', 'Seed', 'shuffle');
@@ -131,7 +129,6 @@ end
 % -------------------------------------------------------------------------------------------------
 function net = make_net(opts)
 % -------------------------------------------------------------------------------------------------
-    switch opts.net.type
     case 'alexnet'
         net = make_alexnet(opts);
     case 'resnet'
