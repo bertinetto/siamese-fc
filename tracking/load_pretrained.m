@@ -27,10 +27,8 @@ function net = load_pretrained(netPath, gpu)
     net = remove_layers_from_block(net, 'dagnn.Loss');
     % init specified GPU
     if ~isempty(gpu)
-        gpuDevice(gpu);
-        net.move('gpu'); % run on GPU (~10x faster)
-    else
-        error('CPU-only mode still to implement.')
-    end
+       gpuDevice(gpu)
+    end        
+    net.move('gpu');
     net.mode = 'test'; % very important for batch norm, we now use the stats accumulated during training.
 end
