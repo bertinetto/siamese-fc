@@ -3,16 +3,16 @@ function [newTargetPosition, bestScale] = tracker_step(net_x, s_x, scoreId, z_fe
 %TRACKER_STEP
 %   runs a forward pass of the search-region branch of the pre-trained Fully-Convolutional Siamese,
 %   reusing the features of the exemplar z computed at the first frame.
-%   
+%
 %   Luca Bertinetto, Jack Valmadre, Joao F. Henriques, 2016
-% ------------------------------------------------------------------------------------------------------------------------- 
+% -------------------------------------------------------------------------------------------------------------------------
     % forward pass, using the pyramid of scaled crops as a "batch"
-    net_x.eval({p.id_feat_z, z_features, 'instance', x_crops});    
-    responseMaps = reshape(net_x.vars(scoreId).value, [p.scoreSize p.scoreSize p.numScale]);    
+    net_x.eval({p.id_feat_z, z_features, 'instance', x_crops});
+    responseMaps = reshape(net_x.vars(scoreId).value, [p.scoreSize p.scoreSize p.numScale]);
     responseMapsUP = gpuArray(single(zeros(p.scoreSize*p.responseUp, p.scoreSize*p.responseUp, p.numScale)));
     % Choose the scale whose response map has the highest peak
     if p.numScale>1
-        currentScaleID = ceil(p.numScale/2);    
+        currentScaleID = ceil(p.numScale/2);
         bestScale = currentScaleID;
         bestPeak = -Inf;
         for s=1:p.numScale

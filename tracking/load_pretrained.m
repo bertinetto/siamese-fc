@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------------------------------
 function net = load_pretrained(netPath, gpu)
 %LOAD_PRETRAINED loads a pretrained fully-convolutional Siamese network as a DagNN
-% -------------------------------------------------------------------------------------------------    
+% -------------------------------------------------------------------------------------------------
     % to keep consistency when reading all hyperparams
     if iscell(netPath)
         netPath = netPath{1};

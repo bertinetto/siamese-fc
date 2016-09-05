@@ -3,6 +3,7 @@ function bboxes = tracker(varargin)
 %TRACKER
 %   is the main function that performs the tracking loop
 %   Default parameters are overwritten by VARARGIN
+%
 %   Luca Bertinetto, Jack Valmadre, Joao F. Henriques, 2016
 % -------------------------------------------------------------------------------------------------
     % These are the default hyper-params for SiamFC-3S

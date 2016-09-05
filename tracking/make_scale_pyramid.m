@@ -3,9 +3,9 @@ function pyramid = make_scale_pyramid(im, targetPosition, in_side_scaled, out_si
 %MAKE_SCALE_PYRAMID
 %   computes a pyramid of re-scaled copies of the target (centered on TARGETPOSITION)
 %   and resizes them to OUT_SIDE. If crops exceed image boundaries they are padded with AVGCHANS.
-%   
-%   Luca Bertinetto, Jack Valmadre, Joao F. Henriques, 2016   
-% -----------------------------------------------------------------------------------------------------    
+%
+%   Luca Bertinetto, Jack Valmadre, Joao F. Henriques, 2016
+% -----------------------------------------------------------------------------------------------------
     in_side_scaled = round(in_side_scaled);
     pyramid = gpuArray(zeros(out_side, out_side, 3, p.numScale, 'single'));
     max_target_side = in_side_scaled(end);
