@@ -43,7 +43,12 @@ function bboxes = tracker(varargin)
     % Get environment-specific default paths.
     p = env_paths_tracking(p);
     % Load ImageNet Video statistics
-    stats = load(p.stats_path);
+    if exist(p.stats_path,'file')
+        stats = load(p.stats_path);
+    else
+        warning('No stats found at %s', p.stats_path);
+        stats = [];
+    end
     % Load two copies of the pre-trained network
     net_z = load_pretrained([p.net_base_path p.net], p.gpus);
     net_x = load_pretrained([p.net_base_path p.net], []);
