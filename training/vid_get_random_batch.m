@@ -1,7 +1,10 @@
 % -----------------------------------------------------------------------------------------------------------------------
 function [imout_z, imout_x, labels, sizes_z, sizes_x] = vid_get_random_batch(imdb, imdb_video, batch, data_dir, varargin)
-% Return batch of pairs of input (z and x) and labels
-% (Sizes are returned as [height, width])
+%VID_GET_RANDOM_BATCH
+%   returns batch of pairs of input (z and x) and labels
+%   (Sizes are returned as [height, width])
+%
+%   Luca Bertinetto, Jack Valmadre, Joao Henriques, 2016
 % -----------------------------------------------------------------------------------------------------------------------
     % Defines
     RGB = 1;

@@ -1,6 +1,9 @@
 % -------------------------------------------------------------------------------------------------
 function [net, stats] = experiment(imdb_video, varargin)
-% Experiment main function - creates a network and trains it on the dataset.
+%EXPERIMENT
+%   main function - creates a network and trains it on the dataset indexed by imdb_video.
+%
+%   Luca Bertinetto, Jack Valmadre, Joao Henriques, 2016
 % -------------------------------------------------------------------------------------------------
     % Default parameters (set the experiment-specific ones in run_experiment)
     opts.net.type = 'alexnet';
@@ -129,11 +132,8 @@ end
 % -------------------------------------------------------------------------------------------------
 function net = make_net(opts)
 % -------------------------------------------------------------------------------------------------
-    case 'alexnet'
-        net = make_alexnet(opts);
-    case 'resnet'
-        net = make_resnet(opts);
-    end
+
+    net = make_siameseFC(opts);
 
     % Save the net graph to disk.
     inputs = {'exemplar', [opts.exemplarSize*[1 1] 3 opts.train.batchSize], ...
@@ -172,9 +172,10 @@ function [net, derOutputs, inputs_fn] = setup_loss(net, resp_sz, resp_stride, lo
                  dagnn.Loss('loss', 'logistic'), ...
                  {'score', 'eltwise_label'}, 'objective');
     % adding weights to loss layer
-    [neg_eltwise, pos_eltwise, instanceWeight] = create_labels(...
+    [pos_eltwise, instanceWeight] = create_labels(...
         resp_sz, loss_opts.labelWeight, ...
         loss_opts.rPos/resp_stride, loss_opts.rNeg/resp_stride);
+    neg_eltwise = [];   % no negative pairs at the moment
     net.layers(end).block.opts = [...
         net.layers(end).block.opts, ...
         {'instanceWeights', instanceWeight}];

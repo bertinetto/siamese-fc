@@ -1,0 +1,3 @@
+addpath(genpath('/path/to/MatConvNet'));
+addpath(genpath('/path/to/deep-one-shot/common'));
+vl_setupnn;
