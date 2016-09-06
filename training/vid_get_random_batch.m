@@ -114,7 +114,7 @@ function [imout_z, imout_x, labels, sizes_z, sizes_x] = vid_get_random_batch(imd
                 % vl_imreadjpeg returns images in [0, 255] with class single.
                 imout_z(:,:,:,i) = repmat(rgb2gray(tmp_z/255)*255, [1 1 3]);
                 imout_x(:,:,:,i) = repmat(rgb2gray(tmp_x/255)*255, [1 1 3]);
-        endne
+        end
 
         if opts.subMean
             % Sanity check - mean should be in range 0-255!
@@ -146,7 +146,6 @@ function [imout_z, imout_x, labels, sizes_z, sizes_x] = vid_get_random_batch(imd
     end
 end
 
-
 % -----------------------------------------------------------------------------------------------------------------------
 function [z, x] = choose_pos_pair(imdb_video, rand_vid, frameRange)
 % Get positive pair with crops from same videos, centered on the object
@@ -167,7 +166,6 @@ function [z, x] = choose_pos_pair(imdb_video, rand_vid, frameRange)
     z = imdb_video.objects{rand_vid}{rand_z};
     x = imdb_video.objects{rand_vid}{rand_x};
 end
-
 
 % -----------------------------------------------------------------------------------------------------------------------
 function imo = acquire_augment(im, imageSize, rgbVariance, aug_opts)
@@ -237,7 +235,6 @@ function imo = acquire_augment(im, imageSize, rgbVariance, aug_opts)
         imo = bsxfun(@minus, imt(sy,sx,:), offset);
     end
 end
-
 
 % -----------------------------------------------------------------------------------------------------------------------
 function [bbox_z, bbox_x] = get_crops(object_z_extent, object_x_extent, size_z, size_x)
