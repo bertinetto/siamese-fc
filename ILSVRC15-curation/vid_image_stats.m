@@ -3,7 +3,7 @@ function stats = vid_image_stats(imdb_video, perc_training, base_path)
 %VID_IMAGE_STATS
 %	Compute basic colour stats for a random PERC_TRAINING of the dataset
 %	Used for data augmentation during training.
-% 	e.g. vid_image_stats(imdb_video, 0.1, /path/to/curated/ILSVRC15/Data/VID/train/')
+% 	e.g. vid_image_stats(imdb_video, 0.1, /path/to/curated/ILSVRC15/')
 % ------------------------------------------------------------------------
     % collect different stats for z and x crops (x contains more padding)
     z_sz = 127;
