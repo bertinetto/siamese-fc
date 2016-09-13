@@ -20,13 +20,6 @@ If you find our work and/or curated dataset useful, please cite:
   journal={arXiv preprint arXiv:1606.09549},
   year={2016}
 }
-
-@article{ILSVRC15,
-Author = {Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
-Title = {ImageNet Large Scale Visual Recognition Challenge},
-journal   = {IJCV},
-Year = {2015}
-}
 ```
 - - - -
 
@@ -38,11 +31,11 @@ Year = {2015}
   5. Be sure to have at least one video sequence in the appropriate format. You can find an example here in the repository (`siam-fc/demo-sequences/vot15_bag`).
   6. `siam-fc/tracking/run_tracking.m` is the entry point to execute the tracker, have fun!
 
-2. [ **Training and tracking** ] Well, if you prefer to train your own network, the process is slighlty more involved (but also more fun).
+2. [ **Training and tracking** ] Well, if you prefer to train your own network, the process is slightly more involved (but also more fun).
   1. Prerequisites: GPU, CUDA drivers, [cuDNN](https://developer.nvidia.com/cudnn), Matlab (we used 2015b), [MatConvNet](http://www.vlfeat.org/matconvnet/install/) (we used `v1.0-beta20`).
   2. Clone the repository.
   3. Follow these [step-by-step instructions](https://github.com/bertinetto/siamese-fc/tree/master/ILSVRC15-curation), which will help you generating a curated dataset compatible with the rest of the code.  
-  4. Download the [imdb_video.mat](http://bit.ly/imdb_video) (6.7GB) with all the metadata and the [dataset stats](http://bit.ly/imdb_video_stats).
+  4. If you did not generate your own, download the [imdb_video.mat](http://bit.ly/imdb_video) (6.7GB) with all the metadata and the [dataset stats](http://bit.ly/imdb_video_stats).
   5. Go to `siam-fc/training/` and remove the trailing `.example` from `env_paths.m.example`, `startup.m.example` and `run_experiment.m.example` editing the files as appropriate.
   6. `siam-fc/training/run_experiment.m` is the entry point to start training. Default hyper-params are at the start of `experiment.m` and can be overwritten by custom ones specified in `run_experiment.m`.
   7. By default, training plots are saved in `siam-fc/training/data/`. When you are happy, grab a network snapshot (`net-epoch-X.mat`) and save it somewhere convenient to use it for tracking.
