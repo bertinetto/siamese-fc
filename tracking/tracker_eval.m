@@ -1,5 +1,5 @@
 % -------------------------------------------------------------------------------------------------------------------------
-function [newTargetPosition, bestScale] = tracker_step(net_x, s_x, scoreId, z_features, x_crops, targetPosition, window, p)
+function [newTargetPosition, bestScale] = tracker_eval(net_x, s_x, scoreId, z_features, x_crops, targetPosition, window, p)
 %TRACKER_STEP
 %   runs a forward pass of the search-region branch of the pre-trained Fully-Convolutional Siamese,
 %   reusing the features of the exemplar z computed at the first frame.
