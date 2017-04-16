@@ -17,4 +17,4 @@ Project page: <http://www.robots.ox.ac.uk/~luca/siamese-fc.html>
 9. Run `save_crops.m` to generate crops for all the videos indexed by `imdb_video.mat` and save them on disk.
 10. Run `vid_image_stats.m` and save the output in a `.mat` file. It will be used for data augmentation during training.
 
-All set! You can now continue from point 2.v. from `./siamese-fc/README.md` and train the network with your custom curated ILSVRC15!
+All set! You can now continue from point `12` from `./siamese-fc/README.md` and train the network with your custom curated ILSVRC15!
