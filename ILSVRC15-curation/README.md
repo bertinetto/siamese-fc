@@ -12,7 +12,7 @@ Project page: <http://www.robots.ox.ac.uk/~luca/siamese-fc.html>
 4. Run `./video_ids.sh /path/to/original/ILSVRC2015` to generate `vid_id_frames.txt`.
 5. Run `per_frame_annotation.m` for all 5 folders.
 6. Run `parse_objects.m` for all 5 folders.
-7. Run `vid_setup_data.m` to generate your own `imdb_video.mat`, otherwise download the one we have already created.
+7. Run `vid_setup_data.m` to generate your own `imdb_video.mat`. Otherwise download the one we have already created - [here](bit.ly/imdb_video) for the one used for the ECCV'16 SiamFC, [here](bit.ly/cfnet_imdb_video) for the one used for the CVPR'17 CFNet.
 8. Duplicate the tree structure of the ILSVRC15 folder (without copying the data!), using something like [this](http://stackoverflow.com/questions/4073969/copy-folder-structure-sans-files-from-one-location-to-another) (for UNIX) or [this](http://superuser.com/questions/530128/how-to-copy-a-directory-structure-without-copying-files) (for Windows). This folder will contain your curated dataset.
 9. Run `save_crops.m` to generate crops for all the videos indexed by `imdb_video.mat` and save them on disk.
-10. Run `vid_image_stats.m` and save the output in a `.mat` file. It will be used for data augmentation during training.
+10. Run `vid_image_stats.m` and save the output in a `.mat` file. It will be used for data augmentation during training. Otherwise download the one we have already created [here](bit.ly/imdb_video_stats).
