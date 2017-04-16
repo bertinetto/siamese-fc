@@ -16,5 +16,3 @@ Project page: <http://www.robots.ox.ac.uk/~luca/siamese-fc.html>
 8. Duplicate the tree structure of the ILSVRC15 folder (without copying the data!), using something like [this](http://stackoverflow.com/questions/4073969/copy-folder-structure-sans-files-from-one-location-to-another) (for UNIX) or [this](http://superuser.com/questions/530128/how-to-copy-a-directory-structure-without-copying-files) (for Windows). This folder will contain your curated dataset.
 9. Run `save_crops.m` to generate crops for all the videos indexed by `imdb_video.mat` and save them on disk.
 10. Run `vid_image_stats.m` and save the output in a `.mat` file. It will be used for data augmentation during training.
-
-All set! You can now continue from point `12` from `./siamese-fc/README.md` and train the network with your custom curated ILSVRC15!
