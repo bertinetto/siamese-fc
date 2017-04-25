@@ -1,11 +1,11 @@
-## Fully-Convolutional Siamese Networks for Object Tracking
+<b>NEWS!</b> Check out our [CVPR'17 paper+code](http://www.robots.ox.ac.uk/~luca/cfnet.html): training a Correlation Filter end-to-end allows super lightweight networks of 2 layers (600 kB) to achieve state-of-the-art performance at high-speed.
 
-(<b>NEWS!</b> Check out our [CVPR'17 paper+code](http://www.robots.ox.ac.uk/~luca/cfnet.html): training a Correlation Filter end-to-end allows super lightweight networks of 2 layers (600 kB) to achieve state-of-the-art performance at high-speed.)
+## Fully-Convolutional Siamese Networks for Object Tracking
 - - - -
+Project page: <http://www.robots.ox.ac.uk/~luca/siamese-fc.html>
+
 The code in this repository enables you to reproduce the experiments of our paper.
 It can be used in two ways: **(1) tracking only** and **(2) training and tracking**.
-
-Project page: <http://www.robots.ox.ac.uk/~luca/siamese-fc.html>
 - - - -
 
 ![pipeline image][logo]
