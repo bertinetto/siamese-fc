@@ -1,4 +1,4 @@
-<b>NEWS!</b> Check out our [CVPR'17 paper+code](http://www.robots.ox.ac.uk/~luca/cfnet.html): training a Correlation Filter end-to-end allows super lightweight networks of 2 layers (600 kB) to achieve state-of-the-art performance at high-speed.
+→ → → **NEWS!** We have ported an improved version of this code  to **Tensorflow**. [Here the repository](https://github.com/torrvision/siamfc-tf)
 
 ## Fully-Convolutional Siamese Networks for Object Tracking
 - - - -
