@@ -1,4 +1,6 @@
-→ → → **NEWS!** We have ported an improved version of this code  to **Tensorflow**. [Here the repository](https://github.com/torrvision/siamfc-tf)
+→  **NEWS!** SiamFC won the ICCV'17 VOT real-time tracking challenge! We used the [slightly improved version from our CVPR'17 CFNet paper](https://github.com/bertinetto/cfnet/blob/master/src/tracking/run_baseline5_evaluation.m).
+
+→  We have ported an improved version of this code  to **Tensorflow**. [Here the repository](https://github.com/torrvision/siamfc-tf)
 
 ## Fully-Convolutional Siamese Networks for Object Tracking
 - - - -
