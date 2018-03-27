@@ -1,4 +1,7 @@
-→  **NEWS!** This code is now discontinued. Please use SiamFC v2 (or baseline-conv5 from our CFNet CVPR'17 paper). [*Code*](https://github.com/bertinetto/cfnet).
+→  **IMPORTANT**. At CVPR'17 we presented CFNet, which uses a slightly modified version of SiamFC (which I have been calling v2 or baseline-conv5) to compare against that paper's Correlation Filter Network.
+The difference is simply that it has only 32 output channel instead of 256 and it has activations with higher spatial resolutions. Results are slightly better, speed is slightly worse.
+For this reason, if you are starting fresh it makes much more sense to use the more recent code from the CFNet repository, which is also a bit cleaner I think.
+However, if you have started with this repo, no worries. Things are just marginally different so there is no much use in switching.
 
 ## Fully-Convolutional Siamese Networks for Object Tracking
 - - - -
