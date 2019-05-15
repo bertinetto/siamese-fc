@@ -6,7 +6,7 @@
 
 1. Signup [here](http://image-net.org/challenges/LSVRC/2015/signup) to obtain the link to download the data of the 2015 challenge. When logged-in, from [this page](http://www.image-net.org/download-images) you should floow the link *Download links to ILSVRC2015 image data* and then *Object detection from video (VID)*.
 2. Download and unzip the full original ImageNet Video dataset (the 86 GB archive).
-3. Move `ILSVRC15/Data/VID/validation` to `ILSVRC15/Data/VID/train/` so that inside `train/` there are 5 folders with the same structure. It is a good idea to rename these folders and use very short names ( I have used `a`, `b`, `c`, `d` and `e`) in order to save some bytes in the metadata.
+3. Move `ILSVRC15/Data/VID/val` to `ILSVRC15/Data/VID/train/` so that inside `train/` there are 5 folders with the same structure. It is a good idea to rename these folders and use very short names ( I have used `a`, `b`, `c`, `d` and `e`) in order to save some bytes in the metadata. Similarly, Move `ILSVRC15/Annotations/VID/val` to `ILSVRC15/Annotations/VID/train/`.
 4. Run `./video_ids.sh /path/to/original/ILSVRC2015` to generate `vid_id_frames.txt`.
 5. Run `per_frame_annotation.m` for all 5 folders.
 6. Run `parse_objects.m` for all 5 folders.
