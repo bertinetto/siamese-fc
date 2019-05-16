@@ -16,7 +16,7 @@ function per_frame_annotation(root, folder_index)
 %                    'elephant','fox','giant_panda','hamster','horse','lion', 'lizard','monkey','motorcycle','rabbit', ...
 %                    'red_panda','sheep','snake','squirrel','tiger','train','turtle','watercraft','whale','zebra'};
 
-    OLD_FOLDERS = {'ILSVRC2015_VID_train_0000','ILSVRC2015_VID_train_0001','ILSVRC2015_VID_train_0002','ILSVRC2015_VID_train_0004','val'};
+    OLD_FOLDERS = {'ILSVRC2015_VID_train_0000','ILSVRC2015_VID_train_0001','ILSVRC2015_VID_train_0002','ILSVRC2015_VID_train_0003','val'};
     NEW_FOLDERS = {'a','b','c','d','e'};
 
     root_anno = [root 'Annotations/VID/train'];
